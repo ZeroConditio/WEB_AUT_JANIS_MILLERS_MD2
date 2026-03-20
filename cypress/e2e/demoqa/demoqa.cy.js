@@ -1,3 +1,4 @@
+import { historyPage } from "../pageObjects/historyPage";
 import { homePage } from "../pageObjects/homePage";
 
 describe('DEMO QA', () => {
@@ -49,6 +50,30 @@ describe('DEMO QA', () => {
             // Book
             homePage.bookButton.click();
         });
+
+
+        it('Appointment History', () => {
+            const demoAcc = {
+                user: 'John Doe',
+                pass: 'ThisIsNotAPassword',
+                
+            }
+             // Get to login page
+            homePage.makeAppointment.click();
+            // Set username
+            homePage.usernameField.type(demoAcc.user);
+            // Set password
+            homePage.passwordField.type(demoAcc.pass);
+            // Login
+            homePage.loginButton.click();
+            // Sidebar
+            historyPage.sidebar.click();
+            historyPage.nav.should('not.be.disabled');
+            // History
+            cy.contains('a', 'History').click(); 
+            historyPage.historyList.should('contain.text', 'No appointment');
+        });
+
     });
 
 
