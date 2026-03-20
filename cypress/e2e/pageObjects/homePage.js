@@ -11,6 +11,10 @@ export class homePage{
         return cy.get('#txt-username');
     }
 
+    static get typeField(){
+        return cy.get('#data-kwcachedvalue')
+    }
+
     static get passwordField(){
         return cy.get('#txt-password');
     }
