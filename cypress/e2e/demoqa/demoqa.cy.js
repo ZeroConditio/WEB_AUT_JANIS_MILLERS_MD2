@@ -39,22 +39,8 @@ describe('DEMO QA', () => {
             // Book
             homePage.bookButton.click();
         });
-
-
-        
     });
 
-    // context('Appointment details', () =>{
-    //     beforeEach(() => {
-    //         cy.visit('/index.php#appointment');
-    //     });
-    //     it('Appointment options', () => {
-    //         //facility
-    //         appointmentPage.facilityField.click();
-    //         appointmentPage.facilityOption.click();
-    //     });
-
-    // })
 
 
     
